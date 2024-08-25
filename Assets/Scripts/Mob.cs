@@ -4,8 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Mob : MonoBehaviour
 {
-    // private const int = Animator.StringToHash(nameof(HorizontalSpeed));
-
     [SerializeField, Min(0f)] private float _maxMoveSpeed;
     [SerializeField, Min(0f)] private float _acceleration;
 
