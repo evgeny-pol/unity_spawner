@@ -7,11 +7,9 @@ public class MobSpawner : MonoBehaviour
 
     [SerializeField, Min(0.0f)] private float _spawnInterval = 1.0f;
     [SerializeField] private Mob _objectToSpawn;
-    [SerializeField, Min(0)] private int _maxCount = 0;
     [SerializeField] private Transform[] _spawnPoints;
 
     private Coroutine _spawnCoroutine;
-    private int _spawnedCount;
 
     private void OnEnable()
     {
@@ -30,13 +28,9 @@ public class MobSpawner : MonoBehaviour
 
         while (enabled)
         {
-            if (_spawnedCount >= _maxCount)
-                yield break;
-
             Transform spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
             Mob mob = Instantiate(_objectToSpawn, spawnPoint.position, Quaternion.identity);
             mob.Move(GetRandomDirection());
-            ++_spawnedCount;
             yield return delay;
         }
     }
