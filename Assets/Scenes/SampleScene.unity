@@ -406,7 +406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc069c49f93bf942969c0fd9115bddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectTag: Mob
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,12 +652,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnInterval: 2
   _objectToSpawn: {fileID: 8705792958946800051, guid: 296d7a1a1a637f148a1b0e4a9cc055a1, type: 3}
-  _maxCount: 999
   _spawnPoints:
   - {fileID: 1450848555}
   - {fileID: 768945970}
   - {fileID: 277183184}
   - {fileID: 1110680}
+  _maxSpawnCount: 0
 --- !u!1 &1450848554
 GameObject:
   m_ObjectHideFlags: 0
