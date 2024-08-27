@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100074, guid: 741f73214c8e59045b42ebac4be91444, type: 3}
       propertyPath: m_Name
-      value: Goblin
+      value: GoblinGreen
       objectReference: {fileID: 0}
     - target: {fileID: 100074, guid: 741f73214c8e59045b42ebac4be91444, type: 3}
       propertyPath: m_Layer
@@ -70,7 +70,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100074, guid: 741f73214c8e59045b42ebac4be91444, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 8705792958946800051}
+      addedObject: {fileID: 459358320917877982}
     - targetCorrespondingSourceObject: {fileID: 100074, guid: 741f73214c8e59045b42ebac4be91444, type: 3}
       insertIndex: 2
       addedObject: {fileID: -7809307740239617606}
@@ -86,7 +86,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100074, guid: 741f73214c8e59045b42ebac4be91444, type: 3}
   m_PrefabInstance: {fileID: 1698719021477238798}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8705792958946800051
+--- !u!114 &459358320917877982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,12 +95,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 1698719021477142244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ebfde31b26d41f4eb6bfc548b231e15, type: 3}
+  m_Script: {fileID: 11500000, guid: ea8696ade0959de4cbd108646a0e1943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxMoveSpeed: 5
-  _acceleration: 1
-  _canMove: 1
+  _rotateSpeed: 90
+  _speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0.37158915
+      tangentMode: 5
+      weightedMode: 2
+      inWeight: 0.33333334
+      outWeight: 0.10366827
+    - serializedVersion: 3
+      time: 5
+      value: 1
+      inSlope: 0.09186129
+      outSlope: 0
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &-7809307740239617606
 MonoBehaviour:
   m_ObjectHideFlags: 0

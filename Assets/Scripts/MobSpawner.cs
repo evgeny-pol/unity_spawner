@@ -3,11 +3,8 @@ using UnityEngine;
 
 public class MobSpawner : MonoBehaviour
 {
-    private const float CircleDegrees = 360f;
-
     [SerializeField, Min(0.0f)] private float _spawnInterval = 1.0f;
-    [SerializeField] private Mob _objectToSpawn;
-    [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private SpawnPoint[] _spawnPoints;
     [Tooltip("0 = Unlimited")]
     [SerializeField, Min(0)] private int _maxSpawnCount;
 
@@ -34,20 +31,13 @@ public class MobSpawner : MonoBehaviour
             if (_maxSpawnCount > 0 && _spawnedCount >= _maxSpawnCount)
                 yield break;
 
-            Transform spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-            Mob mob = Instantiate(_objectToSpawn, spawnPoint.position, Quaternion.identity);
-            mob.Move(GetRandomDirection());
+            SpawnPoint spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
+            spawnPoint.Spawn();
 
             if (_maxSpawnCount > 0)
                 ++_spawnedCount;
 
             yield return delay;
         }
-    }
-
-    private Vector3 GetRandomDirection()
-    {
-        Quaternion rotation = Quaternion.Euler(0, Random.value * CircleDegrees, 0);
-        return rotation * Vector3.forward;
     }
 }
