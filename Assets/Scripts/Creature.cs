@@ -5,13 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Creature : MonoBehaviour
 {
-    private const float _animatorUpdateInterval = 0.1f;
-
     [SerializeField, Min(0f)] private float _maxMoveSpeed;
     [Tooltip("Degrees per second.")]
     [SerializeField, Min(0f)] private float _rotateSpeed;
     [Tooltip("Коэффициент скорости при приближении к цели.")]
     [SerializeField] private AnimationCurve _speedCurve;
+    [SerializeField] private float _animatorUpdateInterval = 0.1f;
 
     protected Rigidbody _rigidbody;
 
